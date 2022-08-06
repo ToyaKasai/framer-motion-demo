@@ -1,7 +1,6 @@
 import { FC } from 'react';
 import styled from '@emotion/styled';
 import DelayViewText from '../animation/DelayViewText';
-import { motion } from 'framer-motion';
 
 const TitleWrapper = styled.div`
   width: 100%;
@@ -20,11 +19,6 @@ const DescriptionWrapper = styled.div`
   width: 100%;
   overflow: hidden;
 `;
-
-const MotionDescription = motion(styled.p`
-  font-size: 20px;
-  line-height: 1.6;
-`);
 
 const TIlTE_TEXT_LIST = {
   FIRST_ROW: ['F', 'r', 'a', 'm', 'e', 'r'],
@@ -51,22 +45,12 @@ const MainVisual: FC = () => {
         ))}
       </TitleWrapper>
       <DescriptionWrapper>
-        <MotionDescription
-          initial={{ y: '100%' }}
-          animate={{ y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4, ease: 'easeInOut' }}
-        >
-          This is a site for practicing
-        </MotionDescription>
+        <DelayViewText delay={0.6}>This is a site for practicing</DelayViewText>
       </DescriptionWrapper>
       <DescriptionWrapper>
-        <MotionDescription
-          initial={{ y: '100%' }}
-          animate={{ y: 0 }}
-          transition={{ duration: 0.8, delay: 0.6, ease: 'easeInOut' }}
-        >
+        <DelayViewText delay={0.6}>
           framer-motion library and animation
-        </MotionDescription>
+        </DelayViewText>
       </DescriptionWrapper>
     </>
   );

@@ -11,7 +11,7 @@ const TitleWrapper = styled.div`
   display: flex;
   line-height: 1.2;
 
-  &:nth-child(2) {
+  &:nth-of-type(2) {
     justify-content: flex-end;
   }
 `;

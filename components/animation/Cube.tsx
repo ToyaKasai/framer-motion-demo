@@ -33,7 +33,7 @@ const Cube: FC<CubeProps> = ({ delay, onAnimationComplete }) => {
       transition={{
         delay: delay,
         duration: 1.3,
-        repeat: 2,
+        repeat: 3,
         times: [0, 0.35, 0.7, 1],
       }}
       onAnimationComplete={onAnimationComplete}

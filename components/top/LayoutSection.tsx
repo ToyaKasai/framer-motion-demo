@@ -15,6 +15,7 @@ const SwitchWrapper = styled.div<SwitchWrapperProps>`
   display: flex;
   justify-content: ${({ isOn }) => (isOn ? 'flex-start' : 'flex-end')};
   padding: 10px;
+  cursor: pointer;
 `;
 
 const MotionSwitch = motion(styled.div`
@@ -27,12 +28,13 @@ const MotionSwitch = motion(styled.div`
 const LayoutSection: FC = () => {
   const [isOn, setIsOn] = useState(false);
 
+  const handleClickSwitch = () => {
+    setIsOn((prevState) => !prevState);
+  };
+
   return (
-    <SectionWrapper heading="Layout Props">
-      <SwitchWrapper
-        isOn={isOn}
-        onClick={() => setIsOn((prevState) => !prevState)}
-      >
+    <SectionWrapper heading="Layout Animation">
+      <SwitchWrapper isOn={isOn} onClick={handleClickSwitch}>
         <MotionSwitch
           layout
           transition={{
